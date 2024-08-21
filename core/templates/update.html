@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./index.css" media="screen" />
+
+    <title>Document</title>
+</head>
+<body>
+
+    <p>{{ student.id }} - {{ student.name }} </p> 
+
+    <form action="{% url 'update' student.id %}" method="POST">
+        {% csrf_token %}
+        
+        <label for="name">Nome:</label>
+        <input type="text" name="name" value="{{ student.name }}" required>
+
+        <label for="age">Idade: </label>
+        <input type="number" name="age" id="age" value="{{ student.age }}" required>
+        
+        
+        <label for="first_semester_grade">Nota Primeiro Semestre:</label>
+        <input type="number" step="0.01" name="first_semester_grade" id="first_semester_grade" value="{{ student.first_semester_grade }}" required>
+        
+        <label for="second_semester_grade">Nota Segundo Semestre:</label>
+        <input type="number" step="0.01" name="second_semester_grade" id="second_semester_grade" value="{{ student.second_semester_grade }}" required>
+        
+        <label for="professor_name">Nome do Professor:</label>
+        <input type="text" name="professor_name" id="professor_name" value="{{ student.professor_name }}" required>
+        
+        <label for="classroom_number">Número da Sala:</label>
+        <input type="number" name="classroom_number" id="classroom_number" value="{{ student.classroom_number }}" required>
+        
+        <button type="submit">Salvar</button>
+    </form>
+
+</body>
+</html>
