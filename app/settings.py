@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['generation-escola-chi.vercel.app']
+ALLOWED_HOSTS = ['https://generation-escola-chi.vercel.app/']
 
 
 # Application definition
